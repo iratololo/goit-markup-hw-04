@@ -1,0 +1,401 @@
+/*____________________ЗМІННІ___________________________*/
+
+:root {
+
+    /*____________________COLOR___________________________*/
+    --iris: #4d5ae5;
+    --ocean: #404bbf;
+    --navyBlue: #2e2f42;
+    --green: #31d0aa;
+    --slate: #434455;
+    --lightSlate: #8E8F99;
+    --cornflower: #E7E9FC;
+    --cloud: #F4F4FD;
+    --navyBlueModal: #2e2f4266;
+    --grey: #2e2f42b3;
+    --white: #ffffff;
+    --dairy: #FCFCFC;
+
+/*____________________FONTS___________________________*/
+
+    --logoFont: "Raleway", sans-serif;
+
+
+    /*____________________FLEX___________________________*/
+    --items: 3;
+    --indent-column: 24px;
+    --indent-row: var(--indent-column);
+
+}
+
+
+/*____________________ЗАГАЛЬНІ НАЛАШТУВАННЯ___________________________*/
+
+body {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--white);
+    color: var(--slate);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+address {
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.list {
+    list-style-type: none;
+}
+
+.link {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.container {
+    max-width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+
+/*____________________FLEX___________________________*/
+
+.card-set {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: var(--indent-row);
+    column-gap: var(--indent-column);
+}
+
+.card-set-item {
+    flex-basis: calc((100% - var(--indent-column) * (var(--items) - 1)) / var(--items));
+}
+
+
+
+
+/*____________________HEADER___________________________*/
+
+.header {
+    border-bottom: 1px solid var(--cornflower);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 76px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    /* column-gap: 76px; */
+}
+
+.logo {
+    font-family: var(--logoFont);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    color: var(--iris);
+    letter-spacing: 0.03em;
+    margin-right: 76px;
+}
+
+.logo-decor {
+    color: var(--navyBlue);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    /* column-gap: 40px; */
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+}
+
+.menu-link {
+    display: inline-block;
+    font-weight: 500;
+    color: var(--navyBlue);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    padding: 24px 0;
+}
+
+.menu-link:hover,
+.menu-link:focus 
+{
+    text-decoration: underline;
+}
+
+.menu-link:hover,
+.menu-link:focus,
+.contacts-link:hover,
+.contacts-link:focus {
+    color: var(--ocean);
+}
+
+.contacts-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    /* column-gap: 40px; */
+    /* row-gap: 20px; */
+    gap: 40px;
+}
+
+.contacts-link {
+    color: var(--slate);
+}
+
+
+/*____________________HERO___________________________*/
+
+.hero {
+    background-color: var(--navyBlue);
+    text-align: center;
+    padding: 188px 0;
+}
+
+.main-title {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    max-width: 496px;
+    margin: 0 auto;
+}
+
+.main-title:not(:last-child) {
+   margin-bottom: 48px;
+}
+
+.button-main {
+    color: var(--white);
+    background-color: var(--iris);
+    padding: 16px 32px;
+    min-width: 169px;
+    margin: 0 auto;
+}
+
+.button-main:hover,
+.button-main:focus {
+    background-color: var(--ocean);
+}
+
+
+/*____________________СПІЛЬНІ НАЛАШТУВАННЯ___________________________*/
+
+.section-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--navyBlue);
+    letter-spacing: 0.02em;
+}
+
+.section-title:not(:last-child) {
+    margin-bottom: 72px;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--navyBlue);
+    letter-spacing: 0.02em;
+}
+
+.subtitle:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.card-info {
+    padding: 32px 16px;
+}
+
+.button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    font-size: 16px;
+    line-height: 1.5;
+    /* display: inline-block; */
+    display: block;
+    border-radius: 4px;
+}
+
+/*____________________BENEFITS___________________________*/
+
+.benefits {
+    /* padding-bottom: 0; */
+}
+
+.benefits-list {
+    --items: 4;
+    /* gap: 24px; */
+}
+
+.benefits-item {
+   /* flex-basis: calc((100% - 3 * 24px) / 4); */
+}
+
+
+
+
+
+/*____________________TEAM___________________________*/
+
+.team {
+    background-color: var(--cloud);
+    text-align: center;
+}
+
+.team-list {
+    --items: 4;
+    /* gap: 24px; */
+}
+
+.team-item {
+    background-color: var(--white);
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+
+
+/*____________________FOOTER___________________________*/
+
+.footer {
+    background-color: var(--navyBlue);
+    padding: 100px 0;
+}
+
+.footer-logo {
+    display: inline-block;
+}
+
+.footer-logo:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.footer-text {
+    color: var(--cloud);
+    max-width: 264px;
+}
+
+.footer .logo-decor {
+    color: var(--cloud);
+}
+
+
+/*____________________FILTER / PORTFOLIO___________________________*/
+
+.portfolio {
+    padding-top: 96px;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.filter:not(:last-child) {
+    margin-bottom: 72px;
+}
+
+.filter-btn {
+    color: var(--iris);
+    background-color: var(--cloud);
+    padding: 12px 24px;
+    border: 1px solid var(--cornflower);
+}
+
+.filter-btn:hover,
+.filter-btn:focus
+ {
+    color: var(--white);
+    background-color: var(--ocean);
+    border: 1px solid transparent;
+}
+
+.content {
+    --indent-row: 48px;
+}
+
+.portfolio-card-info {
+    border: 1px solid var(--cornflower);
+    border-top: none;
+}
