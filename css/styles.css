@@ -21,6 +21,12 @@
     --logoFont: "Raleway", sans-serif;
 
 
+/*____________________ANIMATION___________________________*/
+
+    --duration: 250ms;
+    --timingFunction: cubic-bezier(0.4, 0, 0.2, 1);
+
+
     /*____________________FLEX___________________________*/
     --items: 3;
     --indent-column: 24px;
@@ -128,6 +134,73 @@ img {
     flex-basis: calc((100% - var(--indent-column) * (var(--items) - 1)) / var(--items));
 }
 
+
+
+/*____________________СПІЛЬНІ НАЛАШТУВАННЯ___________________________*/
+
+.section-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--navyBlue);
+    letter-spacing: 0.02em;
+}
+
+.section-title:not(:last-child) {
+    margin-bottom: 72px;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--navyBlue);
+    letter-spacing: 0.02em;
+}
+
+.subtitle:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.card-info {
+    padding: 32px 16px;
+}
+
+.button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    font-size: 16px;
+    line-height: 1.5;
+    /* display: inline-block; */
+    display: block;
+    border-radius: 4px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-item {}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--iris);
+    transition: background-color var(--duration) var(--timingFunction);
+}
+
+.social-icon {}
 
 
 
@@ -250,54 +323,10 @@ img {
 }
 
 
-/*____________________СПІЛЬНІ НАЛАШТУВАННЯ___________________________*/
-
-.section-title {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11;
-    text-align: center;
-    text-transform: capitalize;
-    color: var(--navyBlue);
-    letter-spacing: 0.02em;
-}
-
-.section-title:not(:last-child) {
-    margin-bottom: 72px;
-}
-
-.subtitle {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    color: var(--navyBlue);
-    letter-spacing: 0.02em;
-}
-
-.subtitle:not(:last-child) {
-    margin-bottom: 8px;
-}
-
-.card-info {
-    padding: 32px 16px;
-}
-
-.button {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: capitalize;
-    font-size: 16px;
-    line-height: 1.5;
-    /* display: inline-block; */
-    display: block;
-    border-radius: 4px;
-}
-
 /*____________________BENEFITS___________________________*/
 
 .benefits {
-    /* padding-bottom: 0; */
+   
 }
 
 .benefits-list {
@@ -309,6 +338,26 @@ img {
    /* flex-basis: calc((100% - 3 * 24px) / 4); */
 }
 
+.benefits-wrap-icon{
+    padding: 24px 100px;
+    background-color: var(--cloud);
+}
+
+.benefits-wrap-icon:not(:last-child) {
+   margin-bottom: 8px;
+}
+
+.benefits-icon {}
+
+
+
+
+
+/*____________________SPECIALTY___________________________*/
+
+.specialty {
+    padding-top: 0;
+}
 
 
 
@@ -331,6 +380,64 @@ img {
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
+.team-text:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.team-social-list {
+    gap: 24px;
+}
+
+.team-social-link {
+
+}
+
+.team-social-link:hover, .team-social-link:focus {
+    background-color: var(--ocean);
+}
+
+
+
+
+/*____________________CUSTOMERS___________________________*/
+
+.customers {}
+
+.customers-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.customers-item {}
+
+.customers-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 168px;
+    width: 168px;
+    height: 88px;
+    border: 1px solid var(--lightSlate);
+    border-radius: 4px;
+    transition: border-color var(--duration) var(--timingFunction);
+}
+
+.customers-link:hover, 
+.customers-link:focus {
+    border-color: var(--ocean);
+}
+
+.customers-icon {
+    fill: var(--lightSlate);
+    transition: fill var(--duration) var(--timingFunction);
+}
+
+.customers-link:hover .customers-icon,
+.customers-link:focus .customers-icon {
+    fill: var(--ocean);
+}
 
 
 /*____________________FOOTER___________________________*/
@@ -338,6 +445,15 @@ img {
 .footer {
     background-color: var(--navyBlue);
     padding: 100px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-column-one:not(:last-child) {
+    margin-right: 120px;
 }
 
 .footer-logo {
@@ -355,6 +471,25 @@ img {
 
 .footer .logo-decor {
     color: var(--cloud);
+}
+
+.footer-text-weight {
+    font-weight: 500;
+}
+
+.footer-text-weight:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.footer-social-list {
+    gap: 16px;
+}
+
+.footer-social-link {}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: var(--green);
 }
 
 
