@@ -178,6 +178,7 @@ img {
     /* display: inline-block; */
     display: block;
     border-radius: 4px;
+    transition: background-color var(--duration) var(--timingFunction), color var(--duration) var(--timingFunction);
 }
 
 .social {
@@ -249,6 +250,11 @@ img {
 .menu-item {
 }
 
+.menu-link,
+.contacts-link {
+    transition: color var(--duration) var(--timingFunction);
+}
+
 .menu-link {
     display: inline-block;
     font-weight: 500;
@@ -257,14 +263,22 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     padding: 24px 0;
+    position: relative;
 }
 
-.menu-link:hover,
-.menu-link:focus 
-{
-    text-decoration: underline;
+.menu-link-active::after {
+ content: "";
+ position: absolute;
+ /* bottom: -1px; */
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ height: 4px;
+ border-radius: 2px;
+ background-color: var(--ocean);
 }
 
+.menu-link-active,
 .menu-link:hover,
 .menu-link:focus,
 .contacts-link:hover,
@@ -290,9 +304,15 @@ img {
 /*____________________HERO___________________________*/
 
 .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/hero/bg.jpg);
     background-color: var(--navyBlue);
+    background-repeat: no-repeat;
     text-align: center;
+    background-position: center;
+    background-size: cover;
     padding: 188px 0;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .main-title {
@@ -518,6 +538,8 @@ img {
     border: 1px solid var(--cornflower);
 }
 
+
+.filter-btn-active,
 .filter-btn:hover,
 .filter-btn:focus
  {
@@ -530,7 +552,111 @@ img {
     --indent-row: 48px;
 }
 
+.card {
+    transition: box-shadow var(--duration) var(--timingFunction);
+}
+
+.card:hover,
+.card:focus {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+
+.card-head {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img {}
+
+.card-overlay {
+    padding: 40px 32px;
+    background-color: var(--iris);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    order: 2;
+    transition: top var(--duration) var(--timingFunction);
+}
+
+.card:hover .card-overlay,
+.card:focus .card-overlay {
+    top: 0;
+}
+
+.text-card-overlay {
+    color: var(--cloud);
+}
+
 .portfolio-card-info {
     border: 1px solid var(--cornflower);
     border-top: none;
+}
+
+
+
+
+/*____________________MODAL___________________________*/
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: all;
+}
+
+.modal {
+    
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--navyBlueModal);
+    order: 99;
+}
+
+.modal-window {
+    width: 408px;
+    height: 584px;
+    background-color: var(--dairy);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* transform: scale(0); */
+    /* opacity: 0; */
+    animation: modalWindow var(--duration) var(--timingFunction);
+}
+
+@keyframes modalWindow {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background-color: var(--cornflower);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-icon {
+    stroke: var(--navyBlue);
 }
