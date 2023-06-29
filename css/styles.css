@@ -645,11 +645,11 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform var(--duration) var(--timingFunction) var(--duration);
+    transition: transform var(--duration) var(--timingFunction);
 }
 
 .modal-overlay.is-hidden .modal-window {
-    transform: translateX(-50%) translatey(-170%);
+    transform: translate(-50%, -50%) scale(0);
 }
 
 
@@ -671,6 +671,7 @@ img {
 .modal-btn:hover,
 .modal-btn:focus {
     background-color: var(--ocean);
+    border: none;
 }
 
 .modal-icon {
