@@ -202,7 +202,9 @@ img {
     transition: background-color var(--duration) var(--timingFunction);
 }
 
-.social-icon {}
+.social-icon {
+    fill: var(--cloud);
+}
 
 
 
@@ -210,6 +212,7 @@ img {
 
 .header {
     border-bottom: 1px solid var(--cornflower);
+    box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -270,8 +273,7 @@ img {
 .menu-link-active::after {
  content: "";
  position: absolute;
- /* bottom: -1px; */
- bottom: 0;
+ bottom: -1px;
  left: 0;
  width: 100%;
  height: 4px;
@@ -336,6 +338,7 @@ img {
     padding: 16px 32px;
     min-width: 169px;
     margin: 0 auto;
+    transition: background-color var(--duration) var(--timingFunction);
 }
 
 .button-main:hover,
@@ -360,8 +363,13 @@ img {
 }
 
 .benefits-wrap-icon{
-    padding: 24px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 24px 100px; */
+    height: 112px;
     background-color: var(--cloud);
+    border-radius: 4px;
 }
 
 .benefits-wrap-icon:not(:last-child) {
@@ -401,11 +409,16 @@ img {
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
+.team-card-info {
+    padding: 32px 0px;
+}
+
 .team-text:not(:last-child) {
     margin-bottom: 8px;
 }
 
 .team-social-list {
+    justify-content: center;
     gap: 24px;
 }
 
@@ -442,23 +455,20 @@ img {
     height: 88px;
     border: 1px solid var(--lightSlate);
     border-radius: 4px;
-    transition: border-color var(--duration) var(--timingFunction);
+    transition: border-color var(--duration) var(--timingFunction), color var(--duration) var(--timingFunction);
+    color: var(--lightSlate);
 }
 
 .customers-link:hover, 
 .customers-link:focus {
     border-color: var(--ocean);
+    color: var(--ocean);
 }
 
 .customers-icon {
-    fill: var(--lightSlate);
-    transition: fill var(--duration) var(--timingFunction);
+    fill: currentColor;
 }
 
-.customers-link:hover .customers-icon,
-.customers-link:focus .customers-icon {
-    fill: var(--ocean);
-}
 
 
 /*____________________FOOTER___________________________*/
@@ -470,6 +480,7 @@ img {
 
 .footer-container {
     display: flex;
+    align-items: baseline;
     flex-wrap: wrap;
 }
 
@@ -496,6 +507,7 @@ img {
 
 .footer-text-weight {
     font-weight: 500;
+    color: var(--white);
 }
 
 .footer-text-weight:not(:last-child) {
