@@ -637,17 +637,18 @@ img {
 
 .modal-window {
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     background-color: var(--dairy);
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    transition: opacity var(--duration) var(--timingFunction) 100ms, transform var(--duration) var(--timingFunction) var(--duration);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--duration) var(--timingFunction) var(--duration);
 }
 
 .modal-overlay.is-hidden .modal-window {
-    opacity: 0;
     transform: translateX(-50%) translatey(-170%);
 }
 
@@ -663,8 +664,21 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color var(--duration) var(--timingFunction), border var(--duration) var(--timingFunction);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+    background-color: var(--ocean);
 }
 
 .modal-icon {
-    stroke: var(--navyBlue);
+    fill: var(--navyBlue);
+    transition: fill var(--duration) var(--timingFunction);
+}
+
+.modal-btn:hover .modal-icon,
+.modal-btn:focus .modal-icon {
+    fill: var(--white);
 }
